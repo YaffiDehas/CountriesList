@@ -5,7 +5,7 @@ import {
 } from 'typesafe-actions';
 import * as actions from './actions';
 import { LoadingState } from '../constans';
-import { Country, CountrysState } from './types';
+import { CountrysState } from './types';
 
 type Actions = ActionType<typeof actions>;
 
@@ -37,28 +37,6 @@ const userReducer: Reducer<CountrysState, Actions> = (state = initialState, acti
             };
         }
 
-        // case getType(actions.addUser.success): {
-        //     return {
-        //         ...state,
-        //         userList: [...state.userList, action.payload],
-        //     };
-        // }
-        // case getType(actions.deleteUser.success): {
-        //     return {
-        //         ...state,
-        //         userList: state.userList.filter((user: User) => (
-        //             user.id != action.payload
-        //         )),
-        //     };
-        // }
-        // case getType(actions.editUser.success): {
-        //     return {
-        //         ...state,
-        //         userList: state.userList.map((user: User) => (
-        //             user.id === action.payload.id ? action.payload : user
-        //         )),
-        //     };
-        // }
         default: {
             return state;
         }
